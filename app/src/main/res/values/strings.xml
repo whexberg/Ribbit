@@ -29,6 +29,7 @@
     <string name="camera_choice_choose_picture">Choose Picture</string>
     <string name="camera_choice_choose_video">Choose Video</string>
     <string name="error_external_storage">There was a problem accessing your device\'s external storage.</string>
+    <string name="general_error">Sorry there was an error!</string>
 
     <string-array name="camera_choices">
         <item>@string/camera_choice_take_picture</item>

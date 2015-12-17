@@ -2,13 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.whexberg.ribbit.EditFriendsActivity">
+    tools:context="com.whexberg.ribbit.RecipientsActivity">
 
     <ListView
-        android:id="@+id/editFriendsListView"
+        android:id="@+id/recipientListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipientListViewEmpty"
+        android:text="@string/empty_recipients_list_message"/>
+
 </RelativeLayout>

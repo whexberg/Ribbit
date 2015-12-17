@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     protected Button mLoginButton;
 
     protected TextView mSignUpTextView;
+    protected TextView mResetTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mResetTextView = (TextView) findViewById(R.id.resetLabel);
+        mResetTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, PasswordResetActivity.class);
                 startActivity(intent);
             }
         });

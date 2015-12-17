@@ -14,7 +14,8 @@
 
     <TextView
         android:id="@android:id/empty"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empty_inbox_label"/>
+        android:text="@string/empty_inbox_label"
+        android:layout_centerInParent="true" />
 </RelativeLayout>

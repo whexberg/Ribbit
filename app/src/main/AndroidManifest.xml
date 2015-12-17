@@ -53,6 +53,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.whexberg.ribbit.MainActivity" />
         </activity>
+        <activity
+            android:name=".PasswordResetActivity"
+            android:label="@string/title_activity_password_reset"
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.whexberg.ribbit.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".ViewImageActivity"
+            android:label="@string/title_activity_view_image"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.whexberg.ribbit.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

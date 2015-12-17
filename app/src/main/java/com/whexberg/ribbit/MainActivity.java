@@ -16,9 +16,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseAnalytics;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.io.File;
@@ -27,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
 
@@ -41,9 +48,12 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     public static final int MEDIA_TYPE_VIDEO = 5;
 
     public static final int FILE_SIZE_LIMIT = 1024 * 1024 * 10;// 10 MB
-    protected Uri mMediaUri;
 
+    protected Uri mMediaUri;
+    protected ViewPager mViewPager;
+    protected SectionsPagerAdapter mSectionsPagerAdapter;
     protected DialogInterface.OnClickListener mDialogListener = new DialogInterface.OnClickListener() {
+
         @Override
         public void onClick(DialogInterface dialog, int which) {
             switch (which) {
@@ -134,21 +144,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             }
         }
     };
-
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -270,7 +265,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

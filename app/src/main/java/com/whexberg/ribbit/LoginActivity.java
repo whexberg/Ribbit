@@ -1,5 +1,6 @@
 package com.whexberg.ribbit;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getSupportActionBar().hide();
 
         mSignUpTextView = (TextView) findViewById(R.id.signUpLabel);
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
@@ -78,23 +80,18 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     // Login
                     setProgressBarIndeterminateVisibility(true);
-                    ParseUser.logInInBackground(username, password, new LogInCallback()
-                    {
+                    ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
-                        public void done(ParseUser parseUser, ParseException e)
-                        {
+                        public void done(ParseUser parseUser, ParseException e) {
                             setProgressBarIndeterminateVisibility(false);
 
-                            if(e==null)
-                            {
+                            if (e == null) {
                                 // Success
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
-                            }
-                            else
-                            {
+                            } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                                 builder.setMessage(e.getMessage())
                                         .setTitle(R.string.login_error_title)

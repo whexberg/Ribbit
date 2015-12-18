@@ -1,11 +1,7 @@
 package com.whexberg.ribbit;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -20,6 +16,7 @@ public class PasswordResetActivity extends AppCompatActivity {
 
     protected EditText mEmail;
     protected Button mResetButton;
+    protected Button mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,26 +24,30 @@ public class PasswordResetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_reset);
 
+        getSupportActionBar().hide();
 
         mEmail = (EditText) findViewById(R.id.emailField);
+
+        mCancelButton = (Button) findViewById(R.id.cancelButton);
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         mResetButton = (Button) findViewById(R.id.resetButton);
         mResetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetPassword( mEmail.getText().toString() );
+                resetPassword(mEmail.getText().toString());
             }
         });
     }
 
-    public void resetPassword( String email) {
-
-        setProgressBarIndeterminateVisibility(true);
-
-        ParseUser.requestPasswordResetInBackground(email,
-                new RequestPasswordResetCallback() {
+    public void resetPassword(String email) {
+        ParseUser.requestPasswordResetInBackground(email, new RequestPasswordResetCallback() {
                     public void done(ParseException e) {
-                        setProgressBarIndeterminateVisibility(false);
-
                         if (e == null) {
                             // An email was successfully sent with reset
                             // instructions.

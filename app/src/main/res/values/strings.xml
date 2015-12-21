@@ -49,12 +49,19 @@
     <string name="error_sending_message">There was an error sending your message. Please try again.</string>
     <string name="title_activity_view_image">Ribbit</string>
     <string name="content_desc_background">Ribbit Frog Background Image</string>
-    <string name="subtitle">A Treehouse Project</string>
+    <string name="subtitle">By William Hexberg</string>
     <string name="cancel_button_label">CANCEL</string>
     <string name="content_desc_button_divider">Button divider</string>
     <string name="content_desc_message_icon">Message icon</string>
     <string name="content_desc_user_avatar">User avatar</string>
     <string name="content_desc_user_checkmark">User checkmark</string>
     <string name="push_message">You have a new Ribbit message from %s!</string>
+    <string name="reset_password_text">Reset Password</string>
+    <string name="reset_password_label">RESET</string>
+    <string name="title_activity_password_reset">Reset Password</string>
+    <string name="reset_password_sent">Success! Please Check your email.</string>
+    <string name="reset_password_fail">Reset failed!</string>
+    reset_password_sent
+
 
 </resources>

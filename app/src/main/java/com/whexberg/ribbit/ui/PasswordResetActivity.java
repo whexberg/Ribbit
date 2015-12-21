@@ -58,6 +58,7 @@ public class PasswordResetActivity extends AppCompatActivity {
                             // to see what's up.
                             Toast.makeText(getApplicationContext(), getResources().getString(R.string.reset_password_fail), Toast.LENGTH_LONG).show();
                         }
+                        finish();
                     }
                 }
         );

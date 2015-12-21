@@ -1,4 +1,4 @@
-package com.whexberg.ribbit;
+package com.whexberg.ribbit.ui;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+import com.whexberg.ribbit.R;
 
 public class SignUpActivity extends AppCompatActivity {
 

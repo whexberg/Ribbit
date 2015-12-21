@@ -225,7 +225,7 @@ public class RecipientsActivity extends AppCompatActivity {
                 if (e == null) {
                     // success!
                     Toast.makeText(RecipientsActivity.this,
-                            R.string.success_sending_message,
+                            R.string.success_message,
                             Toast.LENGTH_LONG).show();
                     sendPushNotifications();
                 } else {

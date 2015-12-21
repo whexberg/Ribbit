@@ -45,7 +45,7 @@
             android:layout_toLeftOf="@id/messageIcon"
             android:paddingBottom="@dimen/message_vertical_padding"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textColor="@color/light_grey"
+            android:textColor="@color/light_gray"
             android:textSize="12sp"
 
             tools:text="5 Minutes ago" />
